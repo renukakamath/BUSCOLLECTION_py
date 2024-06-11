@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/images"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Registration">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Add Staff"
+        android:textColor="#F6F1F1"
+        android:textSize="20dp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter first name"
+        android:inputType="textPersonName"
+        android:textColor="#FBFBFB"
+
+        android:textColorHint="#F3EFEF"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+
+
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter place"
+        android:inputType="textPersonName"
+        android:textColor="#F8F4F4"
+        android:textColorHint="#EDEAEA"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="428dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter phone number"
+        android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
+        android:textColorHint="#FAF1F1"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="501dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter email"
+        android:inputType="textEmailAddress"
+        android:textColor="#F6F3F3"
+        android:textColorHint="#F4F2F2"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="597dp" />
+
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/driver"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColorHint="#FFFBFB"
+
+            android:checked="true"
+            android:text="Driver"
+            android:textColor="#F3EDED" />
+
+        <RadioButton
+            android:id="@+id/conductor"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColorHint="#F8F6F6"
+
+            android:text="Conductors"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+
+
+
+    <Button
+        android:id="@+id/student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout1"
+        android:text="Submit"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="651dp" />
+
+</LinearLayout>

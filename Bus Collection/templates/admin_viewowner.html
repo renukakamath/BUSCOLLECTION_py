@@ -1,0 +1,44 @@
+{% include 'adminheader.html'%}
+
+
+
+
+ ?>
+ <div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg'); height: 200px">
+ 
+      
+ 
+</div>
+<center>
+	<h1 style="color: white">View Owner</h1>
+  <form>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+			<th>Owner Name</th>
+			<th>Place</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Id Proof</th>
+		</tr>
+		  {% for row in data['owners'] %}
+         <tr>
+         	<td>{{loop.index}}</td>
+         	<td>{{row['owner_name']}}</td>
+         	<td>{{row['place']}}</td>
+         	<td>{{row['phone']}}</td>
+         	<td>{{row['email']}}</td>
+          <td><a href="/{{row['id_proof']}}"><img src="/{{row['id_proof'] }}"></a></td>
+            {% if row['usertype']=="pending" %} 
+
+          
+                 <td><a class="btn btn-success" href="?action=accept&oid={{row['login_id']}}">accept</a></td>
+                 <td><a class="btn btn-success" href="?action=reject&oid={{row['login_id'] }}">reject</a></td>
+      {% endif %}
+         </tr>
+       {% endfor %}
+		
+	</table>
+  </form>
+</center>
+{% include 'footer.html'%}

@@ -1,0 +1,33 @@
+{% include 'adminheader.html' %}
+
+<div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg'); height: 200px">
+  <div id="pageintro" class="hoc clear"> 
+   
+</div>
+</div>
+<center>
+	<h1 style="color: white">View Employees Details</h1>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+      <th>Owner</th>
+			<th>employee Name</th>
+      <th>Place</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Id Proof</th>
+		</tr>
+	  {% for row in data['employeesss']%}
+    <tr>
+    	<td>{{loop.index}}</td>
+    	<td>{{row['owner_name']}}</td>
+    	<td>{{row['employee_name']}}</td>
+      <td>{{row['eplace']}}</td>
+      <td>{{row['eemail']}}</td>
+      <td>{{row['ephone']}}</td>
+      <td><a href="/{{row['eid_proof']}}"><img src="/{{row['eid_proof']}}"></a></td>
+    </tr>
+     {% endfor %}
+	</table>
+</center>
+{%include 'footer.html' %}

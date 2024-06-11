@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:background="@drawable/images"
+    android:orientation="vertical"
+    tools:context=".Userhome">
+
+
+    <Button
+        android:id="@+id/ViewNotification"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="View Bus"
+
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <Button
+        android:id="@+id/SendComplaint"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Send Complaint"
+
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="403dp" />
+
+
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Logout"
+
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="577dp" />
+</LinearLayout>

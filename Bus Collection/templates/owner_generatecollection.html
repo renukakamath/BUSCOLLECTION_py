@@ -1,0 +1,52 @@
+{% include 'ownerheader.html' %}
+ 
+ <div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg');">
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+<center>
+  <h1>Search Daily Collection</h1>
+  <form method="post">
+    <table border="10" style="color: black;width: 100px">
+
+  
+       <td><input type="date" name="daily" > daily </td>
+        <td> <input type="month" name="monthly"> monthly</td>
+
+     <tr>
+       <td align="center" colspan="2"><input type="submit" name="exdate" class="btn btn-success" value="submit"></td>
+      </tr>
+    
+
+      </tr>
+    </table>
+  </form>
+</center>
+</article>
+</div>
+</div>
+<center>
+	<h1 style="color: white">View Collection</h1>
+  <h1><a class="btn btn-success"  href="collection?">Print</a></h1>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+			<th>Employee</th>
+      <th>Bus</th>
+   
+      <th>coll Amount</th>
+      <th>Date</th>
+		</tr>
+		 {% for row in data['colreport']%}
+    <tr>
+    	<td>{{loop.index}}</td>
+    	
+    	<td>{{row['employee_name']}}</td>
+      <td>{{row['bus_number'] }}</td>
+      <td>{{row['collection_amount']}}</td>
+      <td>{{row['date']}}</td>
+  
+    </tr>
+       {% endfor %}
+	</table>
+</center>
+{% include 'footer.html' %}

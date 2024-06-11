@@ -1,0 +1,65 @@
+
+{% include 'ownerheader.html'%}
+
+  <div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg');">
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+<center>
+	<h1>Manage Bus</h1>
+	<form method="post">
+		{% if data['busup'] %}
+<table class="table" style="width: 500px">
+			<tr>
+				<th>Bus Number</th>
+				<td style="color: black"><input type="text" class="form-control" name="bnumber"  required="" value="{{data['busup'][0]['bus_number']}}"></td>
+			</tr>
+			
+			
+			<tr>
+				<td  align="center" colspan="2"><input type="submit" class="btn btn-success" name="update" value="submit"></td>
+			</tr>
+		</table>
+	{%else %}
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>Bus Number</th>
+				<td style="color: black"><input type="text"  class="form-control" required="" name="bnumber"></td>
+			</tr>
+			
+			<tr>
+				<td  align="center" colspan="2"><input type="submit" class="btn btn-success" name="bus" value="submit"></td>
+			</tr>
+		</table>
+		{%endif %}
+	</form>
+</center>
+</article>
+</div>
+</div>
+<center>
+	<h1 style="color: white">View Bus Details</h1>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+		
+			<th>Owner</th>
+      <th>Bus Number</th>
+     
+		</tr>
+		{% for row in data['busview']%}
+    <tr>
+    	<td>{{loop.index}}</td>
+    	
+    	<td>{{row['owner_name'] }}</td>
+      <td>{{row['bus_number'] }}</td>
+     
+      <td><a class="btn btn-success" href="?action=update&bid={{row['bus_id']}}">update</a></td>
+      <td><a class="btn btn-info" href="?action=delete&bid={{row['bus_id']}}">delete</a></td>
+      <td><a class="btn btn-primary" href="owner_vehiclepermit?bid={{row['bus_id']}}">Vehicle Permit</a></td>
+      <td><a class="btn btn-danger" href="owner_viewcollection?bid={{row['bus_id']}}">View Collection</a></td>
+      <td><a class="btn btn-success" href="owner_viewexpenses?bid={{row['bus_id'] }}">View expenses</a></td>
+    </tr>
+    {% endfor %}
+	</table>
+</center>
+{% include 'footer.html' %}

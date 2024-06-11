@@ -1,0 +1,38 @@
+{% include 'adminheader.html' %}
+ <div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg'); height: 200px">
+ 
+      
+ 
+</div>
+<center>
+	<h1 style="color: white">View Complaints</h1>
+  <form method="post">
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+		
+			<th>Complaints</th>
+       <th>Date</th>
+      <th>Reply</th>
+     
+		</tr>
+	 {% for row in data['complaintsss']%}
+    <tr>
+    	<td>{{loop.index}}</td>
+    	<td>{{row['complaint_des']}}</td>
+      <td>{{row['date']}}</td>
+  
+
+{% if row['reply']=="pending" %}
+      
+      <td><a class="btn btn-danger" href="admin_sendreply?cid={{row['complaint_id'] }}">Send Reply</a></td>
+  {% else %}
+      <td>{{row['reply']}}</td>
+      {% endif %}
+      
+    </tr>
+ {% endfor %}
+	</table>
+  </form>
+</center>
+{% include 'footer.html' %}

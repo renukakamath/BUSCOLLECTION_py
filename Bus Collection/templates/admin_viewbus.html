@@ -1,0 +1,29 @@
+{% include 'adminheader.html' %}
+<div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg'); height: 200px">
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+     
+      
+    </article>
+  </div>
+</div>
+<center>
+	<h1 style="color: white">View Bus Details</h1>
+  <form>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+			<th>Owners</th>
+			<th>Bus Number</th>
+		</tr>
+	{% for row in data['buss']%}
+    <tr>
+    	<td>{{loop.index}}</td>
+    	<td>{{row['owner_name']}}</td>
+    	<td>{{row['bus_number']}}</td>
+    </tr>
+ {% endfor %}
+	</table>
+  </form>
+</center>
+{% include 'footer.html' %}

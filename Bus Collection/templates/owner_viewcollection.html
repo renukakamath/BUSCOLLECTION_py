@@ -1,0 +1,34 @@
+{% include 'ownerheader.html'%}
+<div class="wrapper bgded overlay" style="background-image:url('/static/images/demo/backgrounds/3.jpg'); height: 200px">
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+     
+      
+    </article>
+  </div>
+</div>
+<center>
+	<h1 style="color: white">View Collection</h1>
+	<table class="table" style="width: 500px;color: black">
+		<tr>
+			<th>Slno</th>
+			<th>Employee</th>
+      <th>Bus</th>
+   
+      <th>coll Amount</th>
+      <th>Date</th>
+		</tr>
+		{% for row in data['coooo']%}
+    <tr>
+        <td>{{loop.index}}</td>
+    	
+    	<td>{{row['employee_name'] }}</td>
+      <td>{{row['bus_number']}}</td>
+      <td>{{row['collection_amount']}}</td>
+      <td>{{row['date']}}</td>
+  
+    </tr>
+     {% endfor %}
+	</table>
+</center>
+{% include 'footer.html' %}
